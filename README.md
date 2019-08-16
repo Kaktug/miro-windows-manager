@@ -10,22 +10,8 @@ This script needs Hammerspoon in order to work.
 
 ## How to install
 
- - Extract the zip file, containing `MiroWindowsManager.spoon` in `~/.hammerspoon/Spoons`
- - Now you need to configure Hammerspoon in order to load this spoon in `~/.hammerspoon/Spoons/MiroWindowsManager.spoon` adding the following snippet of code in your `init.lua` file:
-```
-local hyper = {"ctrl", "alt", "cmd"}
-
-hs.loadSpoon("MiroWindowsManager")
-
-hs.window.animationDuration = 0.3
-spoon.MiroWindowsManager:bindHotkeys({
-  up = {hyper, "up"},
-  right = {hyper, "right"},
-  down = {hyper, "down"},
-  left = {hyper, "left"},
-  fullscreen = {hyper, "f"}
-})
-```
+ - Move init.lua, position.lua, and watcher.lua into `~/.hammerspoon/`
+ - Launch hammerspoon
 
 ## Shortcuts
 
@@ -55,6 +41,10 @@ By repeating these shortcuts the window is resized to be one third or two thirds
  The arrows can be used to expand the height/width to be one third, two thirds or again one half. 
  For example if the window is in the top-right corner, pressing `hyper` + `up` the window height will be resized to be one third, while pressing `hyper` + `right` the window width will be resized to be one third; in this case `hyper` + `left` and `hyper` + `down` will move the window to the top-left and bottom-right corners, respectively.
 
+ ### Move between multiple monitors
+ - `hyper` + `h`: move the window left 1 screen
+ - `hyper` + `l`: move the window right one screen
+
 ### Expand to fit the entire height or width
 
 These are useful in case the window is in one of the corners.
@@ -66,6 +56,9 @@ These are useful in case the window is in one of the corners.
 
  - `hyper` + `f`: expand to be full screen
 
+ ### Send behind other windows
+ - `hyper` + `[`: sends window to bottom of application window stack (a little janky but nice if you want the window visisble, vs hidden via `cmd` + `h`)
+
 Note that in case the window is resized to be a half of the screen, you can also use `hyper` + `up` + `down` (or `hyper` + `right` + `left`) to resize the window full screen.
 
 As the other shortcuts, `hyper` + `f` can be pressed multiple times to obtain a centered window of three fourth and one half of height and width. This behaviour can be customized.
@@ -73,27 +66,6 @@ As the other shortcuts, `hyper` + `f` can be pressed multiple times to obtain a 
 ## Animations
 
 The snippet above configures the animation to last `0.3s` with `hs.window.animationDuration = 0.3`. To remove the animations completely change this value to `0`.
-
-## Reviews
-
-Here comments from the users, just as reviews.
-
-> it's something I have been looking for all my life! It is really intuitive and ingenious once you see the magic it can do.
-> 
-> &mdash; [rxng](https://github.com/miromannino/hammerspoon-config/issues/1)
-
-> Really loving the arrow based positioning, thanks for making this ! I can now uninstall “spectacle” which I was using for the same purpose but the key bindings were unintuitive.
->
-> &mdash; Gaurav
-
-> the only issue I have with miro-windows-manager is the fact that I didn't discover it sooner. just getting into HammerSpoon and love this 🥄 ... so handy, nice work @miromannino !
->
-> &mdash; [zanuka](https://github.com/miromannino/miro-windows-manager/issues/13)
-
-## Articles
-
-A suggested tutorial on Mic Sumner: https://www.micsumner.com/how-to-organise-window-viewing-areas-in-mac-os/
-
 
 ## License (MIT)
 
